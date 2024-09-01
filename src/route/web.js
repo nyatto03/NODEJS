@@ -5,6 +5,7 @@ let router = express.Router();
 
 let initWebRoutes = (app) => {
     router.get('/', homeControllers.getHomePage);
+    router.get('/crud', homeControllers.getCrud);
 
     return app.use('/', router);
 };
