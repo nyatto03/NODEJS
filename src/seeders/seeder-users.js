@@ -10,7 +10,7 @@ module.exports = {
                 phoneNumber: null,
                 gender: 1,
                 image:null,
-                roleId: 'R1',
+                roleId: '1',
                 positionId: null,
                 createdAt: new Date(),
                 updatedAt: new Date(),
