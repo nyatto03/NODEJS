@@ -1,5 +1,6 @@
 import express from 'express';
 import homeControllers from '../controllers/homeControllers';
+import userControllers from '../controllers/userController';
 
 let router = express.Router();
 
@@ -13,8 +14,8 @@ let initWebRoutes = (app) => {
     router.post('/put-crud', homeControllers.putCrud);
     router.get('/delete-crud', homeControllers.deleteCrud);
 
+    router.post('/api/login', userControllers.handleLogin);
 
-    
     return app.use('/', router);
 };
 
