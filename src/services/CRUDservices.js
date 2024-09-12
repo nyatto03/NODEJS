@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs';
 import db from '../models/index';
+import { use } from 'react';
 
 const salt = bcrypt.genSaltSync(10);
 
@@ -79,7 +80,7 @@ let updateUserData = (data) => {
                 user.address = data.address;
 
                 await user.save();
-                resolve();
+                resolve(user);
             } else {
                 resolve();
             }
