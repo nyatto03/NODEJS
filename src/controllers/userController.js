@@ -1,4 +1,3 @@
-import allcode from '../models/allcode';
 import userService from '../services/userService';
 
 let handleLogin = async (req, res) => {

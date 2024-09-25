@@ -1,7 +1,5 @@
 import bcrypt from 'bcryptjs';
 import db from '../models';
-import { raw } from 'body-parser';
-import { where } from 'sequelize';
 
 const salt = bcrypt.genSaltSync(10);
 
@@ -14,7 +12,7 @@ let handleUserLogin = (email, password) => {
             if (isExist) {
                 //user already exist
                 let user = await db.User.findOne({
-                    attributes: ['email', 'roleId', 'password'],
+                    attributes: ['email', 'roleId', 'password', 'firstName', 'lastName'],
                     where: { email: email },
                     raw: true,
                 });
